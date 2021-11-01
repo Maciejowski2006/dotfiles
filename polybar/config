@@ -1,0 +1,199 @@
+[bar/top]
+width = 100%
+height = 25
+clickareas = 35
+tray-background = #212435
+tray-transparent = false
+tray-border = 6
+background = #212435
+foreground = #d8d8d8
+foreground-alt = #555555
+
+tray-position = right
+
+tray-detached = true
+tray-offset-x = -5
+tray-padding = 2
+
+dpi = 110
+monitor = ${env:MONITOR:}
+radius = 8.0
+border-size = 6
+border-color = #000000000
+locale = en_US.UTF-8
+
+spacing = 2
+underline-size = 2
+padding-right = 30
+padding-left = 2
+module-margin-left = 5
+module-margin-right = 5
+
+font-1 = Icons:size=8;3
+font-2 = MaterialIcons:size=8;3
+font-3 = Termsynu:size=8;3
+font-4 = FontAwesome:size=8;2
+font-0 = SFNS Display:style=Regular:size=7;3
+
+modules-left = i3
+modules-center = date
+modules-right = volume backlight wifi battery battery2 audiomixer powermenu
+
+[module/battery]
+type = internal/battery
+full-at = 98
+time-format = %H:%M
+
+label-charging = %percentage%% 
+;(%time%)
+label-discharging = %percentage%% (%time%)
+
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/battery2]
+type = internal/battery
+full-at = 98
+time-format = %H:%M
+
+battery = BAT1
+
+label-charging = %percentage%% 
+;(%time%)
+label-discharging = %percentage%% (%time%)
+
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1.0
+
+date = %d.%m.%Y
+time = %H:%M
+
+label = %time%  %date%
+
+[module/wifi]
+type=internal/network
+interface=wlp3s0
+interval = 3.0
+ping-interval = 10
+
+format-connected = "%{A1:st nmtui &:}<ramp-signal><label-connected>%{A}"
+label-connected = %essid%
+label-disconnected = "%{A:st nmtui&:}   not connected%{A}"
+label-disconnected-foreground = #66
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+
+ws-icon-0 = 1; 
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+ws-icon-4 = 5;  
+ws-icon-5 = 6; 
+ws-icon-6 = 7; 
+ws-icon-7 = 8; 
+ws-icon-8 = 9;  
+ws-icon-9 = 10:  
+ws-icon-default = 
+
+label-focused = %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #5a000000
+label-focused-underline = #f8ae01
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+label-visible = %icon%
+label-visible-underline = #555555
+label-visible-padding = 2
+
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+enable-scroll = true
+
+format = <ramp> <label>
+label = %percentage%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+[module/audiomixer]
+type = custom/text
+content = 
+
+cecontent-padding = 4
+click-left = exec pavucontrol
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+label-close = cancel
+label-open-padding = 1 
+label-close-padding = 1 
+
+menu-0-0 = reboot
+menu-0-0-exec = reboot
+menu-0-1 = power off
+menu-0-1-exec = shutdown now
+menu-0-2 = lock
+menu-0-2-exec = i3exit lock
+menu-0-0-padding = 3
+menu-0-1-padding = 3

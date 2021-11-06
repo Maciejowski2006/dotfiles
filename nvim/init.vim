@@ -14,7 +14,7 @@ set wrap
 set linebreak
 
 " Custom statusline
-set statusline+=%{StatuslineGit()}%F%=\ %=File\ Size:\ %{FileSize(line2byte('$')+len(getline('$')))}%=\ %=Line:\ %l,%c%=\ %=File\ Progress:\ %p%%
+set statusline+=[%{StatuslineGit()}\ ]%F%=\ %=File\ Size:\ %{FileSize(line2byte('$')+len(getline('$')))}%=\ %=Line:\ %l,%c%=\ %=File\ Progress:\ %p%%
 
 function! FileSize(bytes)
 	let l:bytes = a:bytes | let l:sizes = ['B', 'KB', 'MB', 'GB'] | let l:i = 0

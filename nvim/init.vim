@@ -10,6 +10,8 @@ set relativenumber number
 set tabstop=4
 set autoindent
 set splitbelow splitright
+set wrap
+set linebreak
 
 " Custom statusline
 set statusline+=%{StatuslineGit()}%F%=\ %=File\ Size:\ %{FileSize(line2byte('$')+len(getline('$')))}%=\ %=Line:\ %l,%c%=\ %=File\ Progress:\ %p%%

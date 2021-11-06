@@ -35,6 +35,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Shortcut for changing numbers [normal | relative]
+map <C-n>n :set number <Enter>
+map <C-n>r :set relativenumber <Enter>
+
 " Copy selected text to clipboard
 vnoremap <C-c> "*Y :let @+=@*<CR>
 

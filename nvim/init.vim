@@ -6,7 +6,7 @@ call plug#end()
 
 " Basic stuff
 set encoding=utf-8
-set number
+set relativenumber number
 set tabstop=4
 set autoindent
 set splitbelow splitright
@@ -35,6 +35,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Shortcut for changing numbers [normal | relative]
+map <C-n><C-n> :set relativenumber! <Enter>
+
 " Copy selected text to clipboard
 vnoremap <C-c> "*Y :let @+=@*<CR>
 
@@ -47,5 +50,5 @@ command! -nargs=0 Sw w !sudo tee % > /dev/null
 " Delete trailing whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e
 
-" Run XRDB whenever .Xresources are updated
+" Run XRDB whenever .Xresources are update
 autocmd BufWritePost ~/.Xresources !xrdb%

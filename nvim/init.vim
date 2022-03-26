@@ -2,6 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'lambdalisue/suda.vim'
 call plug#end()
 
 " Basic stuff
@@ -45,9 +46,6 @@ vnoremap <C-c> "*Y :let @+=@*<CR>
 
 " File autocompletion
 set wildmode=longest,list,full
-
-" Save as root
-command! -nargs=0 Sw w !sudo tee % > /dev/null
 
 " Delete trailing whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e

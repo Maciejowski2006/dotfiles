@@ -11,10 +11,8 @@ foreground-alt = #555555
 
 tray-position = right
 
-tray-detached = true
-tray-offset-x = -5
+tray-detached = false
 tray-padding = 2
-
 dpi = 110
 monitor = ${env:MONITOR:}
 radius = 8.0
@@ -24,7 +22,7 @@ locale = en_US.UTF-8
 
 spacing = 2
 underline-size = 2
-padding-right = 30
+padding-right = 5
 padding-left = 2
 module-margin-left = 5
 module-margin-right = 5
@@ -44,7 +42,7 @@ type = internal/battery
 full-at = 98
 time-format = %H:%M
 
-label-charging = %percentage%% 
+label-charging = %percentage%%
 ;(%time%)
 label-discharging = %percentage%% (%time%)
 
@@ -74,7 +72,7 @@ time-format = %H:%M
 
 battery = BAT1
 
-label-charging = %percentage%% 
+label-charging = %percentage%%
 ;(%time%)
 label-discharging = %percentage%% (%time%)
 
@@ -102,7 +100,6 @@ type = internal/date
 
 ; Seconds to sleep between updates
 interval = 1.0
-
 date = %d.%m.%Y
 time = %H:%M
 
@@ -133,12 +130,12 @@ ws-icon-0 = 1; 
 ws-icon-1 = 2; 
 ws-icon-2 = 3; 
 ws-icon-3 = 4; 
-ws-icon-4 = 5;  
+ws-icon-4 = 5; 
 ws-icon-5 = 6; 
 ws-icon-6 = 7; 
 ws-icon-7 = 8; 
-ws-icon-8 = 9;  
-ws-icon-9 = 10:  
+ws-icon-8 = 9; 
+ws-icon-9 = 10: 
 ws-icon-default = 
 
 label-focused = %icon%
@@ -186,8 +183,8 @@ type = custom/menu
 
 label-open = 
 label-close = cancel
-label-open-padding = 1 
-label-close-padding = 1 
+label-open-padding = 1
+label-close-padding = 1
 
 menu-0-0 = reboot
 menu-0-0-exec = reboot
